@@ -970,7 +970,8 @@ nest::SimulationManager::attack_based_FLO(std::string source_layer, std::string 
     auto it = std::find(id_neuron_attack.begin(), id_neuron_attack.end(), std::to_string(node->get_node_id()));
     
     if(it != id_neuron_attack.end()){
-      dict_consulting["V_m"] = dict_consulting["V_th"];
+      float value_VM = dict_consulting["V_m"].operator double() + (dict_consulting["V_th"].operator double() - dict_consulting["V_m"].operator double()) * (std::stoi(CONN_FLO_dict["voltage"])/100.0);
+      dict_consulting["V_m"] = value_VM;
       node->set_status_base(dict_consulting);
     }
   }
@@ -1102,7 +1103,8 @@ nest::SimulationManager::attack_based_JAM(std::string source_layer, std::string 
     auto it = std::find(id_neuron_attack.begin(), id_neuron_attack.end(), std::to_string(node->get_node_id()));
     
     if(it != id_neuron_attack.end()){
-      dict_consulting["V_m"] = dict_consulting["V_reset"];
+      float value_VM = dict_consulting["V_m"].operator double() + (dict_consulting["V_reset"].operator double() - dict_consulting["V_m"].operator double()) * (std::stoi(CONN_JAM_dict["voltage"])/100.0);
+      dict_consulting["V_m"] = value_VM;
       node->set_status_base(dict_consulting);
     }
   }
