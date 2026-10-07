@@ -3,3 +3,4 @@ end_attack:4032
 source_layer:VisL4
 source_behaviour:e
 n_neurons:100
+voltage:100
