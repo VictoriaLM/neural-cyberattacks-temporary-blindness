@@ -9,6 +9,7 @@ end_attack:23097,23136
 source_layer:VisL4
 source_behaviour:e
 n_neurons:100
+voltage:100
 
 **********FLO-FLO**********
 #type_attack
@@ -20,6 +21,7 @@ instants_attack:9815,9821
 source_layer:VisL4
 source_behaviour:i
 n_neurons:100
+voltage:100
 
 **********JAM-FLO**********
 #type_attack
@@ -32,12 +34,14 @@ end_attack:23097
 source_layer:VisL4
 source_behaviour:e
 n_neurons:100
+voltage:100
 
 #CONN_FLO_attributes
 instants_attack:23103
 source_layer:VisL4
 source_behaviour:i
 n_neurons:100
+voltage:100
 
 **********FLO-JAM**********
 #type_attack
@@ -49,6 +53,7 @@ instants_attack:9815
 source_layer:VisL4
 source_behaviour:i
 n_neurons:100
+voltage:100
 
 #CONN_JAM_attributes
 init_attack:9821
@@ -56,3 +61,29 @@ end_attack:9854
 source_layer:VisL4
 source_behaviour:e
 n_neurons:100
+voltage:100
+
+**********Voltage Analysis**********
+#type_attack
+attack:CONN_JAM
+attack2:
+
+#CONN_JAM_attributes
+init_attack:23064
+end_attack:23097
+source_layer:VisL4
+source_behaviour:e
+n_neurons:100
+voltage:5
+
+**********Neuron Coverage Analysis**********
+#type_attack
+attack:CONN_FLO
+attack2:
+
+#CONN_FLO_attributes
+instants_attack:9815,9821
+source_layer:VisL4
+source_behaviour:i
+n_neurons:15
+voltage:100
