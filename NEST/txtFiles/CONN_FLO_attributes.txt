@@ -2,3 +2,4 @@ instants_attack:4016
 source_layer:VisL4
 source_behaviour:i
 n_neurons:100
+voltage:100
